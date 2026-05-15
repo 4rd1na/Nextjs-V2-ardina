@@ -13,6 +13,7 @@ const urlsToCache = [
 
 // Install event - caching assets static
 self.addEventListener('install', (event) => {
+    self.skipWaiting();
     console.log('Service Worker installing.');
     event.waitUntil(
         caches.open(CACHE_NAME)
@@ -29,6 +30,7 @@ self.addEventListener('activate', (event) => {
     event.waitUntil(
         caches.keys().then((cacheNames) => {
             return Promise.all(
+                self.clients.claim(),
                 cacheNames.map((cacheName) => {
                     if (cacheName !== CACHE_NAME && cacheName !== DYNAMIC_CACHE) {
                         console.log('Deleting old cache:', cacheName);
