@@ -49,10 +49,10 @@ export default function RegisterPage() {
         }
 
         //5. Validasi ReCAPTCHA
-        if (!RECAPTCHAVAlue) {
-            setError("Silahkan verifikasi ReCAPTCHA!");
-            return;
-        }
+        // if (!RECAPTCHAVAlue) {
+        //     setError("Silahkan verifikasi ReCAPTCHA!");
+        //     return;
+        // }
 
         try {
             setError("");
@@ -127,12 +127,12 @@ export default function RegisterPage() {
                     </div>
 
                     {/* ReCHAPTCHA */}
-                    <div className="flex justify-center py-2">
+                    {/* <div className="flex justify-center py-2">
                         <ReCAPTCHA
                             sitekey={process.env.NEXT_PUBLIC_RECHAPTCHA_SITE_KEY!}
                             onChange={(value) => setRECAPTCHAVAlue(value)}
                         />
-                    </div>
+                    </div> */}
 
                     <button type="submit" className="w-full px-4 py-2 bg-blue-500 text-white rounded-lg">
                         Daftar Sekarang
