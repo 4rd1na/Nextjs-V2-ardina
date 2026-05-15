@@ -7,8 +7,8 @@ const urlsToCache = [
     '/global.css',
     '/manifest.json',
     '/favicon.ico',
-    '/icons/icon-192x192.png',
-    '/icons/icon-512x512.png',
+    '/icon-192x192.png',
+    '/icon-512x512.png',
 ];
 
 // Install event - caching assets static
@@ -74,8 +74,8 @@ self.addEventListener('push', (event) => {
     const title = data.title || 'Notification';
     const options = {
         body: data.body || 'You have a new notification.',
-        icon: '/icons/icon-192x192.png',
-        badge: '/icons/icon-192x192.png',
+        icon: '/icon-192x192.png',
+        badge: '/icon-192x192.png',
         data: data.url ? {
             url: data.url || '/'
         } : { url: '/' },
