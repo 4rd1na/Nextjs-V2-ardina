@@ -19,6 +19,34 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Terapkan pada semua section atau elemen yang ingin di-animate */
+main>* {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Atau bisa lebih spesifik per elemen */
+main section,
+main article,
+main div {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
