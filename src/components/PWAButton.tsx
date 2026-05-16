@@ -9,6 +9,7 @@ export default function PWAInstallButton() {
     useEffect(() => {
         const handler = (e: any) => {
             e.preventDefault();
+
             setDeferredPrompt(e);
             setShowInstallButton(true);
         };
@@ -28,9 +29,10 @@ export default function PWAInstallButton() {
         if (!deferredPrompt) return;
 
         deferredPrompt.prompt();
+
         const { outcome } = await deferredPrompt.userChoice;
 
-        console.log(`User response to the install prompt: ${outcome}`);
+        console.log(`User response: ${outcome}`);
 
         setDeferredPrompt(null);
         setShowInstallButton(false);
@@ -41,7 +43,10 @@ export default function PWAInstallButton() {
     }
 
     return (
-        <button onClick={handleInstallClick} className="pwa-install-button">
+        <button
+            onClick={handleInstallClick}
+            className="pwa-install-button md:hidden"
+        >
             Install App
         </button>
     );

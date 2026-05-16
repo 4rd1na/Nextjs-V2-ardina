@@ -5,12 +5,11 @@ import Sidebar from "./Sidebar";
 import Header from "./Header";
 import Footer from "./Footer";
 
-import RegisterSW from "../PWARegister";
 import PWAInstallButton from "../PWAButton";
+import PWARegister from "../PWARegister";
 
 import { NotificationProvider, useNotification } from "../NotificationComponent";
 import { supabase } from "@/lib/supabase";
-import PWARegister from "../PWARegister";
 
 interface Todo {
     id: number;
