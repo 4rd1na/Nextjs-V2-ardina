@@ -4,7 +4,7 @@ const DYNAMIC_CACHE = 'next-pwa-dynamic-v1';
 // Asset yang akan di cache saat instalasi
 const urlsToCache = [
     '/',
-    '/global.css',
+    // '/global.css',
     '/manifest.json',
     '/favicon.ico',
     '/icon-192x192.png',
